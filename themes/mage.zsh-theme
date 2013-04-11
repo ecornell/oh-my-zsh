@@ -9,7 +9,7 @@ PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
 # The right-hand prompt
 
 # RPROMPT='${time} %{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
-RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}  $(git_prompt_status)%{$reset_color%} $(git_time_since_commit) ${time}%{$reset_color%'
+RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}  $(git_prompt_status)%{$reset_color%} $(git_time_since_commit) ${time}%{$reset_color%}'
 
 # time=%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}
 time=
@@ -85,7 +85,7 @@ function git_time_since_commit() {
             fi
         else
             COLOR="$ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL"
-            echo "$COLOR~{$reset_color%}"
+            echo "$COLOR~%{$reset_color%}"
         fi
     fi
 }
