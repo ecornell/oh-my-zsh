@@ -1,25 +1,10 @@
 # The prompt
-
-
-# PROMPT='%{%f%k%b%}
-# %{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{black}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
-# %{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%b%} '
-
 PROMPT='%{%f%k%b%}
 %{%K{${bkg}}%F{green}%}%n%{%F{blue}%}@%{%F{cyan}%}%m %{$fg[green]%}[%{$fg[yellow]%}%~%{$fg[green]%}] %{$fg[magenta]%}$(git_prompt_info)%{%K{${bkg}}%} $(git_prompt_status) $(git_time_since_commit)%{%K{${bkg}}%}%E%{%f%k%b%}
 %{%K{${bkg}}%}%#%{%f%k%b%} '
 
-#%{$fg[magenta]%}[%d] %{%f%k%b%} '
-
 # The right-hand prompt
-
-# RPROMPT='${time} %{$fg[magenta]%}$(git_prompt_info)%{%f%b%}$(git_prompt_status)%{%f%b%}'
-#RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{%f%b%}  $(git_prompt_status)%{%f%b%} $(git_time_since_commit) ${time}%{%f%b%}'
 RPROMPT='%{%F{blue}%}!%!%{%f%b%}'
-
-
-# time=%(?.%{$fg[green]%}.%{$fg[red]%})%*%{%f%b%}
-time=
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ± %{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%b%}"
@@ -37,16 +22,6 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 # ☀ ✹ ☄ ♆ ♀ ♁ ♐ ♇ ♈ ♉ ♚ ♛ ♜ ♝ ♞ ♟ ♠ ♣ ⚢ ⚲ ⚳ ⚴ ⚥ ⚤ ⚦ ⚒ ⚑ ⚐ ♺ ♻ ♼ ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
 # ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ ⨠
 # ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
-
-function moveup() {
-    echo -ne "\033[1A"
-}
-
-function prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{%f%b%}" && return
-  hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{%f%b%}" && return
-  echo "%{$fg[cyan]%}◯%{%f%b%}"
-}
 
 # Colors vary depending on time lapsed.
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
